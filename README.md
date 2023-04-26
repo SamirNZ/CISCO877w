@@ -2,14 +2,17 @@
 
 ## Introduction
 Dans ce tutoriel nous avons montré comment réaliser un configuration basique d'un routeur CISCO 877w 
-//+------------------------------+//
-//+configuration cisco 877w 	    +//
-//+------------------------------+//
-//reset
+
+# reset
+```
 write erase
 reload
 [yes/no]: n
-//+--------------------change mot de pass session pour telnet----------+//
+```
+
+# Change mot de pass session pour telnet
+
+```
 hostname Router_name
 enable pass cisco
 line vty 0 4
@@ -17,13 +20,12 @@ pass cisco
 login
 exi
 do wr
-//+------------------------------+// 
 en 
 conf t
 do sh ip int br
 int Dot11Radio0
 do sh run int Dot11Radio0
-ssid 04801Tsm1
+ssid yourSSID
 encryption vlan 1 mode ciphers tkip aes-ccm
 exi
 int Dot11Radio0.1
@@ -43,7 +45,7 @@ bridge irb
 int bVI 1
 ip address 10.67.10.1 255.255.255.0
 exi
-dot11 ssid 04801Tsm1
+dot11 ssid yourSSID
 vlan 1
 authentification open
 authentification key-management wpa
@@ -61,11 +63,4 @@ bridge 1 route ip
 exi
 service dhcp
 sh dot11 as
-
-
-
-
-
-
-
- 
+```
