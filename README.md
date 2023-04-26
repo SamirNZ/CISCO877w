@@ -3,14 +3,11 @@
 ## Introduction
 Dans ce tutoriel nous avons montré comment réaliser un configuration basique d'un routeur CISCO 877w 
 
-# reset
+# Reset
 ```
 write erase
 reload
 [yes/no]: n
-```
-# Change mot de pass session pour telnet
-```
 hostname Router_name
 enable pass cisco
 line vty 0 4
