@@ -9,9 +9,7 @@ write erase
 reload
 [yes/no]: n
 ```
-
 # Change mot de pass session pour telnet
-
 ```
 hostname Router_name
 enable pass cisco
